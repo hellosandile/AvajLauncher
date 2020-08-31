@@ -1,0 +1,102 @@
+Todo-list
+----
+Research UML class diagrams JAva & OOP patterns
+Research packages
+What are observers in java
+Inheritance
+package vs import in Java
+
+UML
+3 blocks
+- Name
+- attributes
+- Methods
+
+UML Visibility
+
++ public = can be also used by code outside of the object
+- private = can only be accessed within the defining class
+# protected = accessible from defining and child classes
+
+
+
+Simulation:
+- Coordinates are positive numbers
+-The height is in the 0-100 range
+- If an aircraft needs to passs the upper limit height it remains at 100
+- Each time an aircraft is created it receives a unique ID. 2 aircrafts cannot have same ID
+- If an aircraft reaches height 0 or <, the aircraft lands unregisters from the weather tower and logs in current coordinates.
+- When a weather change occurs, each aircraft tpye needs ot log a message, as seen in the example. THe message format is:
+TYPE#NAME(UNIQUE_ID): SPECIFIC_MESSAGE. lol, it says a funny message will be appreciated during the correction
+- Each time an aircraft registers or unregisers to/from the weather tower, a message will be logged.
+
+
+CHECK THE VALIDATION on PDF when basically done with the program.
+----
+
+General Instructions
+- NOt allowed to use any external libraries, build tools or code generators
+- DO NOT yse the default package
+- Creat own relevant packages following the Java package naming conventions
+- Do not commit any .class files
+- Use javac and java available as commands in your terminal
+- Compile the project running the commands below in the root of your prject folder.
+
+$find -name *.java > sources.txt 
+$javac -sourcepath @sources.txt
+
+
+Mandatory part
+- All classes must be implemented respecting every detail provided in
+diagram but feel free to add more clases or include additional attributes if you think necessary
+but do not change acess modifiers or the class hierarchy for the lasses provided
+
+-! Program will on take in one argument from the command line. This arg represents the name of the text file that contail scenrio
+-! Program will generate a file "simulation.txt" that describes the outcome of the simulation
+
+Scenario file
+First line - (positive integer - represents the number of times the simulation is run - in our case the number of times a weather change is triggered)
+-then TYPE NAME LONGITUDE LATITUDE HEIGHT
+Weather generation
+- RAIN
+- FOG
+- SUN
+- SNOW
+_!!!!! DON'T understand
+Each 3 dimensional point has its own weather. Feel free to use whatever generation algorithm you want as long as it takes into account the point's coordinates
+
+
+AIRCRAFTS
+- JetPlane:
+SUN - Latitude + 10, Height + 2
+RAIN - Latitude + 5
+FOG - Latitude + 1
+SNOW - Height - 7
+
+- Helicopter:
+SUN - Longitude + 10, Height + 2
+RAIN - Longitude + 5
+FOG - Longitude + 1
+SNOW - Height - 12
+
+- Baloon:
+SUN - Longitude + 2, Height + 4
+RAIN - Height - 5
+FOG - Height - 3
+SNOW - Height - 15
+
+PDF -
+He will provide
+- UML class diagram
+- must have OO design patterns
+
+What you need to know to be on  the team
+- Interpreting class diagrams - this is the way the architech uses to communitcate with you
+- Observer, Singleton and Factory design patterns - he knows that this will not be the final version of the simulator and
+he aims to extend it in order to address other needs that the ariport may have
+- The basic syntax of Java and some of the core features of the language - this is obvious
+
+Must be easy to change in case the requirements are modified
+
+
+java com/mali/avajlauncher/Main file.txt
